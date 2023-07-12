@@ -1,3 +1,20 @@
+import 'package:flutter/material.dart';
+
+import 'screens/home_screen.dart';
+
+const List<Widget> screens = [
+  HomeScreen(),
+  Center(
+    child: Text("Account Screen"),
+  ),
+  Center(
+    child: Text("Cart Screen"),
+  ),
+  Center(
+    child: Text("More Screen"),
+  )
+];
+
 const double kAppBarHeight = 80;
 
 const String amazonLogoUrl =

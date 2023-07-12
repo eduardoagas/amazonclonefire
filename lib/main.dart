@@ -1,3 +1,4 @@
+import 'package:amazonclone2/layout/screen_layout.dart';
 import 'package:amazonclone2/screens/sign_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -44,11 +45,13 @@ class AmazonClone extends StatelessWidget {
                   ),
                 );
               } else if (user.hasData) {
+                return const ScreenLayout();
+                /*print("uid- ${FirebaseAuth.instance.currentUser!.uid}");
                 return ElevatedButton(
                     onPressed: () {
                       FirebaseAuth.instance.signOut();
                     },
-                    child: const Text("sign out"));
+                    child: const Text("sign out"));*/
               } else {
                 return const SignInScreen();
               }
