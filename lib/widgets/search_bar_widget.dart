@@ -40,22 +40,31 @@ class SearchBarWidget extends StatelessWidget implements PreferredSizeWidget {
             : Container(),
         SizedBox(
           width: screenSize.width * 0.7,
-          child: TextField(
-            readOnly: isReadyOnly,
-            onTap: () {
-              if (isReadyOnly) {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SearchScreen()));
-              }
-            },
-            decoration: InputDecoration(
-              hintText: "Search for something in Amazon",
-              fillColor: Colors.white,
-              filled: true,
-              border: border,
-              focusedBorder: border,
+          child: Container(
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 8,
+                  spreadRadius: 1,
+                  offset: const Offset(0, 10))
+            ]),
+            child: TextField(
+              readOnly: isReadyOnly,
+              onTap: () {
+                if (isReadyOnly) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SearchScreen()));
+                }
+              },
+              decoration: InputDecoration(
+                hintText: "Search for something in Amazon",
+                fillColor: Colors.white,
+                filled: true,
+                border: border,
+                focusedBorder: border,
+              ),
             ),
           ),
         ),
